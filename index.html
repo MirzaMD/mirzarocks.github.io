@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic-Tac-Toe</title>
+</head>
+<body>
+    <h1 id="title">Tic-Tac-Toe</h1>
+    <div class="container">
+        <div class="box" data-index="0"></div>
+        <div class="box" data-index="1"></div>
+        <div class="box" data-index="2"></div>
+        <div class="box" data-index="3"></div>
+        <div class="box" data-index="4"></div>
+        <div class="box" data-index="5"></div>
+        <div class="box" data-index="6"></div>
+        <div class="box" data-index="7"></div>
+        <div class="box" data-index="8"></div>
+    </div>
+    <h1 id="victoryStatus"></h1>
+    <style>
+        body{
+            margin:0;
+            padding:0;
+            background:url("images/wood3.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            height:100vh;
+            width: 100wh;
+            overflow: hidden;
+        }
+        #title{
+            text-align: center;
+            color:#563232;
+        }
+        .container{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            width:500px;
+            height:500px;
+            align-items: center;
+            margin-left:530px;
+            margin-top:80px;
+        }
+        .box{
+            display: grid;
+            place-items: center;
+            font-size: 70px;
+            width:160px;
+            height:160px;
+            background:url("images/wood2.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            color:#563232;
+            border-radius:10%;
+            cursor:pointer;
+            box-shadow: 5px 5px 10px black;
+        }
+        #victoryStatus{
+            position:relative;
+            bottom:500px;
+            left:30%;
+            font-size:200px;
+            display:none;
+            color:#311e01;
+        }
+        @media(max-width:1180px){
+            .box{
+                width:130px;
+                height:130px;
+                font-size:50px;
+                position: relative;
+                right:10%;
+            }
+            #title{
+                text-align: center;
+                font-size:30px;
+                position: relative;
+                left:30px;
+            }
+            #victoryStatus{
+                font-size: 150px;
+            }
+        }
+        @media(max-width:1085px){
+            .box{
+                width:128px;
+                height:128px;
+                font-size:45px;
+                position: relative;
+                right:10%;
+            }
+            #title{
+                text-align: center;
+                font-size:40px;
+                position: relative;
+                left:-14%;
+
+            }
+            #victoryStatus{
+                font-size: 150px;
+            }
+            .container{
+                position: relative;
+                right:20%;
+            }
+        }
+        @media(max-width:900px){
+            #title{
+                position: relative;
+                left:-06%;
+            }
+        }
+        @media(max-width:780px){
+            .box{
+                width:130px;
+                height:130px;
+                font-size:40px;
+                position: relative;
+                right:10%;
+            }
+            .container{
+                margin-top: 30%;
+            }
+            #title{
+                text-align: center;
+                font-size:30px;
+                position: relative;
+                left:-05px;
+                top:15%;
+            }
+            #victoryStatus{
+                font-size: 100px;
+            }
+        }
+        @media(max-width:729px){
+            .box{
+                width:128px;
+                height:128px;
+                font-size:30px;
+                position: relative;
+                right:10%;
+            }
+            .container{
+                margin-top: 30%;
+            }
+            #title{
+                text-align: center;
+                font-size:35px;
+                position: relative;
+                left:80px;
+                top:15%;
+            }
+            #victoryStatus{
+                font-size: 90px;
+            }
+        }
+        @media(max-width:660px){
+            .box{
+                width:127px;
+                height:127px;
+                font-size:30px;
+                position: relative;
+                right:10%;
+            }
+            .container{
+            position: relative;
+            right:40%;
+            }
+
+            #title{
+                text-align: center;
+                font-size:35px;
+                position: relative;
+                left:10px;
+                top:15%;
+            }
+            #victoryStatus{
+                font-size: 90px;
+            }
+        }
+        @media(max-width:585px){
+            .box{
+                width:127px;
+                height:127px;
+                font-size:30px;
+                position: relative;
+                right:10%;
+            }
+            .container{
+            position: relative;
+            right:40%;
+            }
+
+            #title{
+                text-align: center;
+                font-size:35px;
+                position: relative;
+                left:50px;
+                top:15%;
+            }
+            #victoryStatus{
+                font-size: 90px;
+            }
+        }
+        @media(max-width:535px){
+            .box{
+                width:127px;
+                height:127px;
+                font-size:30px;
+                position: relative;
+                right:10%;
+            }
+            .container{
+            position: relative;
+            right:40%;
+            }
+
+            #title{
+                text-align: center;
+                font-size:35px;
+                position: relative;
+                left:70px;
+                top:10%;
+            }
+            #victoryStatus{
+                font-size: 90px;
+            }
+        }
+        @media(max-width:465px){
+            .box{
+                width:127px;
+                height:127px;
+                font-size:30px;
+                position: relative;
+                right:10%;
+            }
+            .container{
+            position: relative;
+            right:50%;
+            top:20%;
+            }
+
+            #title{
+                text-align: center;
+                font-size:35px;
+                position: relative;
+                left:70px;
+                top:30%;
+            }
+            #victoryStatus{
+                font-size: 90px;
+            }
+        }
+        @media(max-width:394px){
+            .box{
+                width:127px;
+                height:127px;
+                font-size:30px;
+                position: relative;
+                right:10%;
+            }
+            .container{
+            position: relative;
+            right:60%;
+            top:20%;
+            }
+
+            #title{
+                text-align: center;
+                font-size:35px;
+                position: relative;
+                left:100px;
+                top:27%;
+            }
+            #victoryStatus{
+                font-size: 90px;
+            }
+        }
+        @media(max-height:630px){
+            .box{
+                width:160px;
+                height:100px;
+                font-size:30px;
+            }
+            .container{
+                position:relative;
+                bottom:100px;
+            }
+        }
+        @media(max-height:521px){
+            .box{
+                width:160px;
+                height:70px;
+                font-size:30px;
+                margin:-17px;
+            }
+            #title{
+                position: relative;
+                top:300px;
+            }
+        }
+        @media(max-width:765px){
+            .box{
+                width:160px;
+                height:80px;
+                font-size:30px;
+            }
+            .container{
+                position:relative;
+                bottom:300px;
+                right:44%;
+            }
+        }
+    </style> 
+<script src="ticTacToe.js"></script>       
+</body>
+
+</html>
